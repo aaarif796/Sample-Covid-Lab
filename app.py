@@ -105,14 +105,12 @@ def main():
                   row=2,col=2)
     st.plotly_chart(fig)
     
-    st.markdown('<h4> Graph/Plot Interpetation </h4>',unsafe_allow_html=True)
-    st.markdown("
-                - As we visualized the line plots above it can be clearly assumed that the data is Non-Stationary.
-                - So, in order to overcome data non-stationarity ADF test i.e. Augmented Dickey-Fuller Test is performed to check whether the data is stationary or not.
-                - If the data is not stationary, differentiation between the data values are carried out to make the data stationary. 
-                - Subsequently, different time series algorithms and forecasting techniques like AR, MA, ARMA, ARIMA, SARIMA, and Prophet were implemented.
-                - However, better model accuracy for the given dataset was achieved using the ARIMA(Auto Regression, Integrated, Moving Averages) model.  
-    ")
+    st.markdown('<h4> Graph/Plot Interpretation </h4>',unsafe_allow_html=True)
+    st.markdown("- As we visualized the line plots above it can be clearly assumed that the data is Non-Stationary.")
+    st.markdown("- So, in order to overcome data non-stationarity ADF test i.e. Augmented Dickey-Fuller Test is performed to check whether the data is stationary or not.")
+    st.markdown("- If the data is not stationary, differentiation between the data values is carried out to make the data stationary.")
+    st.markdown("- Subsequently, different time series algorithms and forecasting techniques like AR, MA, ARMA, ARIMA, SARIMA, and Prophet were implemented.")
+    st.markdown("- However, better model accuracy for the given dataset was achieved using the ARIMA(Auto Regression, Integrated, Moving Averages) model.  ")
     
     
     # Load Arima_D model
