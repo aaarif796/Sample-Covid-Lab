@@ -64,7 +64,7 @@ def main():
     
     
     # plot the diagram
-    st.markdown('<h4> Plots of Data </h4>',unsafe_allow_html=True)
+    st.markdown('<h4> Data Visualization </h4>',unsafe_allow_html=True)
     
     # fig,ax=plt.subplots(nrows=4,ncols=1,figsize=(10, 20))
     # date_format = mdates.DateFormatter("%b %Y")
@@ -105,17 +105,14 @@ def main():
                   row=2,col=2)
     st.plotly_chart(fig)
     
-    explain="""
-    As we see the line plot above, we can clearly assumed that data are non stationary.
-    
-    So, I perform Augmented Dickey-Fuller (ADF) test to check wheather the data is staionary or not. If it's not stationary then again I perform differentiate
-    between the data value to make data statinary. 
-    
-    After that, I tried different algorithm like AR,MA, ARMA, ARIMA, SARIMA and Prophet. But, I got better accuracy using ARIMA model.
-    
-    """
-    
-    st.write(explain)
+    st.markdown('<h4> Graph/Plot Interpetation </h4>',unsafe_allow_html=True)
+    st.markdown("
+                - As we visualized the line plots above it can be clearly assumed that the data is Non-Stationary.
+                - So, in order to overcome data non-stationarity ADF test i.e. Augmented Dickey-Fuller Test is performed to check whether the data is stationary or not.
+                - If the data is not stationary, differentiation between the data values are carried out to make the data stationary. 
+                - Subsequently, different time series algorithms and forecasting techniques like AR, MA, ARMA, ARIMA, SARIMA, and Prophet were implemented.
+                - However, better model accuracy for the given dataset was achieved using the ARIMA(Auto Regression, Integrated, Moving Averages) model.  
+    ")
     
     
     # Load Arima_D model
@@ -128,10 +125,9 @@ def main():
                              end=select_date)
         return pd.DataFrame(data)
     
-    
     st.write()
-    
-    select_date=st.date_input('Select the date for forcast',min_value=datetime(2023,4,30),max_value=datetime(2024,5,31))
+    st.markdown('<h4> Model Forcast period up to: </h4>',unsafe_allow_html=True)
+    select_date=st.date_input('Select Date up to 2023-5-31',min_value=datetime(2023,4,30),max_value=datetime(2024,5,31))
     select_date=select_date
 
 
