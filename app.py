@@ -172,16 +172,16 @@ def main():
         data_DR=predictmodDR(select_date)
         # df = df.rename(columns={'Name': 'Full Name', 'Age': 'Age Group'})
         data_DR=data_DR.rename(columns={'predicted_mean':'Denials_Received'})
-        data_DR[data_DR<0]=0
+        data_DR[data_DR<0]=data_DR['Denials_Received'].mean()
         data_D=predictmodD(select_date)
         data_D=data_D.rename(columns={'predicted_mean':'Denial_%'})
-        data_D[data_D<0]=0
+        data_D[data_D<0]=data_D['Denial_%'].mean()
         data_SPR=predictmodSPR(select_date)
         data_SPR=data_SPR.rename(columns={'predicted_mean':'Sum_of_Payment_Received'})
-        data_SPR[data_SPR<0]=0
+        data_SPR[data_SPR<0]=data_SPR['Sum_of_Payment_Received'].mean()
         data_CSR=predictmodCSR(select_date)
         data_CSR=data_CSR.rename(columns={'predicted_mean':'Covid_Samples_Received'})        
-        data_CSR[data_CSR<0]=0
+        data_CSR[data_CSR<0]=data_CSR['Covid_Samples_Received'].mean()
         # data={'Total Covid Sample Received':[data_CSR],
         #       'Sum of Payment Received':[data_SPR],
         #       "Denail Received":[data_DR],
