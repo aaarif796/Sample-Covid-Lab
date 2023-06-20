@@ -206,6 +206,10 @@ def main():
     st.markdown("<b>Connect On LinkedIn:</b>",unsafe_allow_html=True)
     st.markdown('<a href="https://www.linkedin.com/in/mohammad-aarif-ansari-a6b869b6/">https://www.linkedin.com/in/mohammad-aarif-ansari-a6b869b6/</a>',
                     unsafe_allow_html=True)
+
+    st.markdown("<b>View Code:</b>",unsafe_allow_html=True)
+    st.markdown('<a href="https://github.com/aaarif796/Sample-Covid-Lab">https://github.com/aaarif796/Sample-Covid-Lab</a>',
+                    unsafe_allow_html=True)
         
     
     
